@@ -1,0 +1,5 @@
+// p2pshare.proto
+syntax = "proto3";
+package p2pshare;
+
+// Definir serviços e mensagens para Gossip (descoberta de peers) e File Transfer (download).
