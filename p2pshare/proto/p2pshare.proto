@@ -1,5 +1,58 @@
-// p2pshare.proto
 syntax = "proto3";
+
 package p2pshare;
 
-// Definir serviços e mensagens para Gossip (descoberta de peers) e File Transfer (download).
+service PeerService {
+  // Envia a lista de peers conhecidos pelo solicitante
+  // Recebe em troca a lista de peers conhecidos pelo receptor
+  // Usado na entrada de um novo peer na rede (gossip bootstrap)
+  rpc RegisterAndSync(SyncRequest) returns (SyncResponse);
+
+  // Retorna a lista de peers ativos conhecidos por este peer
+  rpc GetPeerList(Empty) returns (PeerListResponse);
+
+  // Retorna os arquivos que este peer está compartilhando
+  rpc GetFileList(Empty) returns (FileListResponse);
+
+  // Envia o arquivo solicitado em chunks (streaming)
+  rpc DownloadFile(DownloadRequest) returns (stream FileChunk);
+}
+
+message PeerInfo {
+  string id = 1;
+  string address = 2;
+  int32 port = 3;
+}
+
+message SyncRequest {
+  PeerInfo sender = 1;
+  repeated PeerInfo known_peers = 2;
+}
+
+message SyncResponse {
+  repeated PeerInfo known_peers = 1;
+}
+
+message PeerListResponse {
+  repeated PeerInfo peers = 1;
+}
+
+message FileInfo {
+  string name = 1;
+  int64 size = 2;
+}
+
+message FileListResponse {
+  repeated FileInfo files = 1;
+}
+
+message DownloadRequest {
+  string filename = 1;
+}
+
+message FileChunk {
+  bytes data = 1;
+  int32 sequence = 2;
+}
+
+message Empty {}
