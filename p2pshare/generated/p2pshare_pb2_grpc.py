@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-from . import p2pshare_pb2 as p2pshare__pb2
+from generated import p2pshare_pb2 as p2pshare__pb2
 
 GRPC_GENERATED_VERSION = '1.80.0'
 GRPC_VERSION = grpc.__version__
@@ -76,14 +76,14 @@ class PeerServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetFileList(self, request, context):
-        """Retorna os arquivos que este peer está compartilhando
+        """Retorna os arquivos que este peer está compartilhando (com hash SHA-256)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DownloadFile(self, request, context):
-        """Envia o arquivo solicitado em chunks (streaming)
+        """Envia o arquivo solicitado em chunks (streaming); ultimo chunk traz o hash SHA-256
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

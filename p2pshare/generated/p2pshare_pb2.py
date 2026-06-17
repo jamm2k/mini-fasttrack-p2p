@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0ep2pshare.proto\x12\x08p2pshare\"5\n\x08PeerInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12\x0c\n\x04port\x18\x03 \x01(\x05\"Z\n\x0bSyncRequest\x12\"\n\x06sender\x18\x01 \x01(\x0b\x32\x12.p2pshare.PeerInfo\x12\'\n\x0bknown_peers\x18\x02 \x03(\x0b\x32\x12.p2pshare.PeerInfo\"7\n\x0cSyncResponse\x12\'\n\x0bknown_peers\x18\x01 \x03(\x0b\x32\x12.p2pshare.PeerInfo\"5\n\x10PeerListResponse\x12!\n\x05peers\x18\x01 \x03(\x0b\x32\x12.p2pshare.PeerInfo\"&\n\x08\x46ileInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04size\x18\x02 \x01(\x03\"5\n\x10\x46ileListResponse\x12!\n\x05\x66iles\x18\x01 \x03(\x0b\x32\x12.p2pshare.FileInfo\"#\n\x0f\x44ownloadRequest\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\"+\n\tFileChunk\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x10\n\x08sequence\x18\x02 \x01(\x05\"\x07\n\x05\x45mpty2\x89\x02\n\x0bPeerService\x12@\n\x0fRegisterAndSync\x12\x15.p2pshare.SyncRequest\x1a\x16.p2pshare.SyncResponse\x12:\n\x0bGetPeerList\x12\x0f.p2pshare.Empty\x1a\x1a.p2pshare.PeerListResponse\x12:\n\x0bGetFileList\x12\x0f.p2pshare.Empty\x1a\x1a.p2pshare.FileListResponse\x12@\n\x0c\x44ownloadFile\x12\x19.p2pshare.DownloadRequest\x1a\x13.p2pshare.FileChunk0\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0ep2pshare.proto\x12\x08p2pshare\"5\n\x08PeerInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12\x0c\n\x04port\x18\x03 \x01(\x05\"Z\n\x0bSyncRequest\x12\"\n\x06sender\x18\x01 \x01(\x0b\x32\x12.p2pshare.PeerInfo\x12\'\n\x0bknown_peers\x18\x02 \x03(\x0b\x32\x12.p2pshare.PeerInfo\"7\n\x0cSyncResponse\x12\'\n\x0bknown_peers\x18\x01 \x03(\x0b\x32\x12.p2pshare.PeerInfo\"5\n\x10PeerListResponse\x12!\n\x05peers\x18\x01 \x03(\x0b\x32\x12.p2pshare.PeerInfo\"6\n\x08\x46ileInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04size\x18\x02 \x01(\x03\x12\x0e\n\x06sha256\x18\x03 \x01(\t\"5\n\x10\x46ileListResponse\x12!\n\x05\x66iles\x18\x01 \x03(\x0b\x32\x12.p2pshare.FileInfo\"#\n\x0f\x44ownloadRequest\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\";\n\tFileChunk\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x10\n\x08sequence\x18\x02 \x01(\x05\x12\x0e\n\x06sha256\x18\x03 \x01(\t\"\x07\n\x05\x45mpty2\x89\x02\n\x0bPeerService\x12@\n\x0fRegisterAndSync\x12\x15.p2pshare.SyncRequest\x1a\x16.p2pshare.SyncResponse\x12:\n\x0bGetPeerList\x12\x0f.p2pshare.Empty\x1a\x1a.p2pshare.PeerListResponse\x12:\n\x0bGetFileList\x12\x0f.p2pshare.Empty\x1a\x1a.p2pshare.FileListResponse\x12@\n\x0c\x44ownloadFile\x12\x19.p2pshare.DownloadRequest\x1a\x13.p2pshare.FileChunk0\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,15 +40,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PEERLISTRESPONSE']._serialized_start=232
   _globals['_PEERLISTRESPONSE']._serialized_end=285
   _globals['_FILEINFO']._serialized_start=287
-  _globals['_FILEINFO']._serialized_end=325
-  _globals['_FILELISTRESPONSE']._serialized_start=327
-  _globals['_FILELISTRESPONSE']._serialized_end=380
-  _globals['_DOWNLOADREQUEST']._serialized_start=382
-  _globals['_DOWNLOADREQUEST']._serialized_end=417
-  _globals['_FILECHUNK']._serialized_start=419
-  _globals['_FILECHUNK']._serialized_end=462
-  _globals['_EMPTY']._serialized_start=464
-  _globals['_EMPTY']._serialized_end=471
-  _globals['_PEERSERVICE']._serialized_start=474
-  _globals['_PEERSERVICE']._serialized_end=739
+  _globals['_FILEINFO']._serialized_end=341
+  _globals['_FILELISTRESPONSE']._serialized_start=343
+  _globals['_FILELISTRESPONSE']._serialized_end=396
+  _globals['_DOWNLOADREQUEST']._serialized_start=398
+  _globals['_DOWNLOADREQUEST']._serialized_end=433
+  _globals['_FILECHUNK']._serialized_start=435
+  _globals['_FILECHUNK']._serialized_end=494
+  _globals['_EMPTY']._serialized_start=496
+  _globals['_EMPTY']._serialized_end=503
+  _globals['_PEERSERVICE']._serialized_start=506
+  _globals['_PEERSERVICE']._serialized_end=771
 # @@protoc_insertion_point(module_scope)

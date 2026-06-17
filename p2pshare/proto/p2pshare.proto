@@ -11,10 +11,10 @@ service PeerService {
   // Retorna a lista de peers ativos conhecidos por este peer
   rpc GetPeerList(Empty) returns (PeerListResponse);
 
-  // Retorna os arquivos que este peer está compartilhando
+  // Retorna os arquivos que este peer está compartilhando (com hash SHA-256)
   rpc GetFileList(Empty) returns (FileListResponse);
 
-  // Envia o arquivo solicitado em chunks (streaming)
+  // Envia o arquivo solicitado em chunks (streaming); ultimo chunk traz o hash SHA-256
   rpc DownloadFile(DownloadRequest) returns (stream FileChunk);
 }
 
@@ -40,6 +40,7 @@ message PeerListResponse {
 message FileInfo {
   string name = 1;
   int64 size = 2;
+  string sha256 = 3;  // hash SHA-256 do arquivo (hex)
 }
 
 message FileListResponse {
@@ -53,6 +54,7 @@ message DownloadRequest {
 message FileChunk {
   bytes data = 1;
   int32 sequence = 2;
+  string sha256 = 3;  // preenchido apenas no ultimo chunk (verificacao final)
 }
 
 message Empty {}
